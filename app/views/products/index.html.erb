@@ -1,0 +1,5 @@
+<% @products.each do |product| %>
+  <h2><%= product.name || "Untitled product" %></h2>
+  <p><%= product.description || "No text." %>
+<% end %>
+<p><%= link_to "New product", new_product_path %>
