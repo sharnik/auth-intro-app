@@ -13,6 +13,11 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    clear_current_user
+    render text: "Signed out."
+  end
+
   private
 
   def session_params
