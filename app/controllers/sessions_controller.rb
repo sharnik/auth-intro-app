@@ -6,7 +6,8 @@ class SessionsController < ApplicationController
   def create
     if (user = User.find_by_login session_params[:login]) &&
         user.authenticate(session_params[:password])
-      render text: "Signed in!"
+      set_current_user user
+      redirect_to products_path
     else
       render text: "Wrong login/password. Naughty, naughty."
     end

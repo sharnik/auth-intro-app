@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <p>Hi, <%= current_user ? current_user.login : 'stranger' %>!</p>
 <%= yield %>
 
 </body>
