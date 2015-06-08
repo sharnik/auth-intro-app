@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def authenticate
+    redirect_to new_session_path unless current_user
+  end
+
   def set_current_user(user)
     session[:user_id] = user.id
     @current_user = user

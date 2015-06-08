@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_filter :authenticate, except: :index
 
   def new
     @product = Product.new
